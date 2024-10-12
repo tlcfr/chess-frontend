@@ -23,6 +23,9 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      'semi': ['warn', 'always'],
+      'quotes': ['warn', 'double'],
+      'object-curly-spacing': ['warn', 'always'],
     },
   },
 )
