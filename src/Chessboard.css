@@ -1,0 +1,23 @@
+.chessboard-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.square-container {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.square-rank {
+    display: flex;
+    height: 12.5%;
+}
+
+.square {
+    align-content: center;
+    width: 12.5%;
+}
