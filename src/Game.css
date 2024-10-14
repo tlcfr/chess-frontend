@@ -1,0 +1,4 @@
+.chessboard {
+  width: min(80vh, 100vw);
+  height: min(80vh, 100vw);
+}

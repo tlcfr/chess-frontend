@@ -1,29 +1,17 @@
 import "./App.css";
-import Chessboard from "./Chessboard";
-import { useState } from "react";
-import GameDto from "./dto/GameDto.ts";
-import apiService from "./apiService.ts";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Home.tsx";
+import Game from "./Game.tsx";
 
 function App() {
 
-  const [game, setGame] = useState<GameDto>();
-
-  async function handleCreateGame() {
-    const response = await apiService.createGame();
-    setGame(response.data);
-  }
-
   return (
-    <>
-      {game
-        ? (
-          <div className="chessboard">
-            <Chessboard pieces={game.arrangements[0].pieces} />
-          </div>
-        )
-        : <button onClick={handleCreateGame}>Create game</button>
-      }
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/game/:id" element={<Game />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
