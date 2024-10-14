@@ -1,8 +1,9 @@
 import "./Chessboard.css";
 import board from "/board.svg";
 import React from "react";
+import PieceDto from "./dto/PieceDto.ts";
 
-function Chessboard() {
+function Chessboard({pieces}: { pieces: PieceDto[] }) {
 
   function handleSquareClick(index: number) {
     console.log("Clicked square with index:", index);
@@ -16,7 +17,7 @@ function Chessboard() {
         const index = rankIndex * 8 + fileIndex;
         rank.push(
           <div className="square" key={index} onClick={() => handleSquareClick(index)}>
-            {index}
+            <img src={`/piece/${pieces[index]?.shortName}.svg`} alt="" />
           </div>,
         );
       }
