@@ -4,4 +4,11 @@ function createGame() {
   return apiClient.post("/game");
 }
 
-export default { createGame };
+function getGame(id: string) {
+  return apiClient.get(`/game/${id}`);
+}
+
+export default {
+  createGame,
+  getGame,
+};
